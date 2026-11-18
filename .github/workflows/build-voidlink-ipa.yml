@@ -16,6 +16,8 @@ jobs:
           ref: Integration
           submodules: recursive
           persist-credentials: false
+      - name: Install Metal toolchain
+        run: xcodebuild -downloadComponent MetalToolchain
       - name: Build for iPad and iPhone
         shell: bash
         run: |
@@ -46,4 +48,3 @@ jobs:
         with:
           name: VoidLink-build-log
           path: ${{ runner.temp }}/voidlink-build.log
-
